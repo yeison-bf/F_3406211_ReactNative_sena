@@ -1,11 +1,10 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-export default function BotonFlotante({label, posicion, sumar, reinicio}) {
+export default function BotonFlotante({label, posicion, openModal}) {
     return (
         <Pressable
             style={[styles.boton, posicion == 'right' ? styles.positionRight : styles.positionLeft]}
-            onPress={sumar}
-            onLongPress={reinicio}
+            onPress={openModal}
         >
             <Text style={styles.botonText}>{label}</Text>
         </Pressable>
@@ -15,18 +14,17 @@ export default function BotonFlotante({label, posicion, sumar, reinicio}) {
 
 const styles = StyleSheet.create({
     boton: {
-        width: '80px',
+        width: '60px',
         backgroundColor: 'black',
-        height: '80px',
+        height: '60px',
         borderRadius: '50%',
         alignItems: 'center',
-        justifyContent: 'center',
         position: 'absolute',
         bottom: '20px',
     },
     botonText: {
         color: 'white',
-        fontSize: '2em'
+        fontSize: '2.5em'
     },
 
     positionRight:{
